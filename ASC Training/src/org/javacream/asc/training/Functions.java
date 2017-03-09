@@ -6,6 +6,7 @@ public class Functions {
 		//Lokale Variable, nicht sichtbar ausserhalb dieser Funktion
 		String name = "Sawitzki";
 		String name2 = "Mustermann";
+		String name3 = name;
 		printName(name, true);
 		printName(name2, false);
 	
