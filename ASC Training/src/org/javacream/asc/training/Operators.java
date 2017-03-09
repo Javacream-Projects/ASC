@@ -41,6 +41,7 @@ public class Operators {
 		logischesResult = zahl1 >= zahl2;
 		logischesResult = zahl1 <= zahl2;
 		logischesResult = zahl1 == zahl2;
+		logischesResult = zahl1 != zahl2; //Ungleich
 		//logischesResult = zahl1 = zahl2; Typischer Fehler: Zuweisung statt Vergleich
 
 
