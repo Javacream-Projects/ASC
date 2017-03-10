@@ -16,7 +16,6 @@ public class CatchException {
 		} catch (Exception e) {
 			System.out.println("Fehler, unparsable...");
 		}
-
 		
 		System.out.println("Done.");
 
