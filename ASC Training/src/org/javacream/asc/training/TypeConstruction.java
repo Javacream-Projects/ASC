@@ -28,7 +28,8 @@ public class TypeConstruction {
 		s.concat("-Emil");
 	}
 	static void addToString(StringBuilder s){
-		s.append("-Emil").append("-Fritz");
+		StringBuilder temp = s.append("-Emil");
+		temp.append("-Fritz");
 	}
 	static String addToStringWithReturn(String s){
 		return s.concat("-Emil");
