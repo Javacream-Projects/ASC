@@ -7,6 +7,16 @@ public class Person {
 	private Integer height;
 	private Character gender;
 	private Person partner;
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public String sayHello() {
 		String message = "Hello, my name is " + this.givenName + " " + this.lastname;
 		if (this.partner != null) {

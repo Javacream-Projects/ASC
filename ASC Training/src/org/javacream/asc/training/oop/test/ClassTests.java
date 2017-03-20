@@ -3,6 +3,7 @@ package org.javacream.asc.training.oop.test;
 import java.util.HashSet;
 
 import org.javacream.asc.training.oop.Address;
+import org.javacream.asc.training.oop.Company;
 import org.javacream.asc.training.oop.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -67,5 +68,44 @@ public class ClassTests {
 		Assert.assertTrue(p2.marry(p3));
 		
 		
+	}
+
+	@Test public void peopleAndAddresses(){
+		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
+		Person p2 = new Person("Musterfrau", "Hanna", 170, 'f');
+		Person p3 = new Person("Mustermann", "Hans", 199, 'm');
+		Address a1 = new Address("München", "Marienplatz");
+		Address a2 = new Address("München", "Karlsplatz");
+
+		p1.setAddress(a1);
+		p2.setAddress(a1);
+		p3.setAddress(a2);
+		p2.setAddress(new Address("Düsseldorf", "Flughafen"));
+	}
+	@Test public void companyAndAddresses(){
+		
+		Address a1 = new Address("München", "Marienplatz");
+		Address a2 = new Address("München", "Karlsplatz");
+		Address a3 = new Address("Düsseldorf", "Flughafen");
+		Company company = new Company("ASC", a3);
+		
+		Assert.assertEquals(1,company.getAddresses().size());
+		company.addAddress(a2);
+		company.addAddress(a1);
+		company.addAddress(null);
+		
+		Assert.assertEquals(3,company.getAddresses().size());
+		company.removeAddress(2);
+		Assert.assertEquals(2,company.getAddresses().size());
+		company.addAddress(a3);
+		Assert.assertEquals(2,company.getAddresses().size());
+		company.removeAddress(0);
+		Assert.assertEquals(2,company.getAddresses().size());
+		doSomethingHidden(company);
+		Assert.assertEquals(2,company.getAddresses().size());
+		
+	}
+	private void doSomethingHidden(Company company) {
+		company.getAddresses().clear();
 	}
 }
