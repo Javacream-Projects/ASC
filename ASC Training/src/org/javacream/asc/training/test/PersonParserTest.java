@@ -10,6 +10,9 @@ public class PersonParserTest {
 	@Test
 	public void testReadPersonProperties() throws Exception{
 		Properties personProperty = new Properties();
+		String s = "Hugo";
+		Integer  i = 52;
+
 //		try {
 			personProperty.load(getClass().getResourceAsStream("/sawitzki.properties"));
 			Assert.assertEquals("Sawitzki", personProperty.getProperty("lastname"));
