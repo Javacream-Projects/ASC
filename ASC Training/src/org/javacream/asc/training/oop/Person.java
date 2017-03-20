@@ -7,7 +7,6 @@ public class Person {
 	private Integer height;
 	private Character gender;
 	private Person partner;
-
 	public String sayHello() {
 		String message = "Hello, my name is " + this.givenName + " " + this.lastname;
 		if (this.partner != null) {
