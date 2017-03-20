@@ -6,11 +6,37 @@ public class Person {
 	private String givenName;
 	private Integer height;
 	private Character gender;
-	
-	public String sayHello(){
-		return null;
+	private Person partner;
+
+	public String sayHello() {
+		String message = "Hello, my name is " + this.givenName + " " + this.lastname;
+		if (this.partner != null) {
+			message = message + ", married with " + partner.givenName + " " + partner.lastname;
+		}else{
+			message += ", single";
+		}
+		return message;
 	}
 
+	public Boolean marry(Person newPartner){
+		if (newPartner != null && newPartner.partner == null && this.partner == null && this != newPartner){
+			this.partner = newPartner;
+			newPartner.partner = this;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public Boolean divorce(){
+		if (this.partner == null){
+			return false;
+		}else{
+			this.partner.partner = null;
+			this.partner = null;
+			return true;
+		}
+	}
 	public Person(String lastname, String givenName, Integer height, Character gender) {
 		super();
 		this.lastname = lastname;
@@ -33,7 +59,7 @@ public class Person {
 	}
 
 	public String getLastname() {
-		return lastname;
+		return this.lastname;
 	}
 
 	public void setLastname(String lastname) {

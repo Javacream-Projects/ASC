@@ -16,7 +16,6 @@ public class ClassTests {
 		Person p1 = new Person("Sawitzki", "Rainer", 183, 'm'); 
 		System.out.println(p1.toString());
 		Assert.assertEquals("Sawitzki", p1.getLastname());
-		
 	}
 
 	@Test public void testAddress(){
@@ -36,6 +35,8 @@ public class ClassTests {
 		set.add(p2);
 		set.add(p3);
 		Assert.assertTrue(set.size() == 3);
+		System.out.println(p1.sayHello());
+		System.out.println(p2.sayHello());
 
 	}
 	
