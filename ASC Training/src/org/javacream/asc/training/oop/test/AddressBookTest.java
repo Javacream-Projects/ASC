@@ -2,6 +2,7 @@ package org.javacream.asc.training.oop.test;
 
 import org.javacream.asc.training.oop.Address;
 import org.javacream.asc.training.oop.AddressBook;
+import org.javacream.asc.training.oop.Company;
 import org.javacream.asc.training.oop.Person;
 import org.junit.Test;
 
@@ -22,5 +23,9 @@ public class AddressBookTest {
 	ab.add(p3);
 	System.out.println(ab.findByAddress(a1));
 	System.out.println(ab.findByAddress(a2));
+	
+	
+	Company company = new Company("Integrata", a2);
+	//ab.add(company);
 }
 }
