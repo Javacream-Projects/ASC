@@ -3,21 +3,25 @@ package org.javacream.asc.training.oop.test;
 import java.util.HashSet;
 
 import org.javacream.asc.training.oop.Address;
+import org.javacream.asc.training.oop.Artist;
 import org.javacream.asc.training.oop.Company;
 import org.javacream.asc.training.oop.Person;
+import org.javacream.asc.training.oop.PersonUtility;
+import org.javacream.asc.training.oop.Student;
+import org.javacream.asc.training.oop.Worker;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ClassTests {
 
-	@Test
+	//@Test
 	public void personTest() {
 		Person p1 = new Person("Sawitzki", "Rainer", 183, 'm');
 		System.out.println(p1.toString());
 		Assert.assertEquals("Sawitzki", p1.getLastname());
 	}
 
-	@Test
+	//@Test
 	public void testAddress() {
 		Address a1 = new Address("München", "Marienplatz");
 		System.out.println(a1.toString());
@@ -25,7 +29,7 @@ public class ClassTests {
 
 	}
 
-	@Test
+	//@Test
 	public void testPersonIdentity() {
 		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
 		Person p2 = new Person("Sawitzki", "Rainer", 183, 'm');
@@ -40,7 +44,7 @@ public class ClassTests {
 
 	}
 
-	@Test
+	//@Test
 	public void testAddressIdentity() {
 		Address a1 = new Address("München", "Marienplatz");
 		Address a2 = new Address("München", "Karlsplatz");
@@ -53,7 +57,7 @@ public class ClassTests {
 
 	}
 
-	@Test
+	//@Test
 	public void testPersonMarriage() {
 		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
 		Person p2 = new Person("Musterfrau", "Hanna", 170, 'f');
@@ -70,7 +74,8 @@ public class ClassTests {
 		
 	}
 
-	@Test public void peopleAndAddresses(){
+	//@Test 
+	public void peopleAndAddresses(){
 		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
 		Person p2 = new Person("Musterfrau", "Hanna", 170, 'f');
 		Person p3 = new Person("Mustermann", "Hans", 199, 'm');
@@ -82,7 +87,8 @@ public class ClassTests {
 		p3.setAddress(a2);
 		p2.setAddress(new Address("Düsseldorf", "Flughafen"));
 	}
-	@Test public void companyAndAddresses(){
+	//@Test 
+	public void companyAndAddresses(){
 		
 		Address a1 = new Address("München", "Marienplatz");
 		Address a2 = new Address("München", "Karlsplatz");
@@ -108,4 +114,22 @@ public class ClassTests {
 	private void doSomethingHidden(Company company) {
 		company.getAddresses().clear();
 	}
+	
+	@Test public void testPersonClassHierarchie(){
+		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
+		Student s1 = new Student("Einstein", "Alberta", 167, 'f', "LMU");
+		Company company = new Company("Integrata", new Address("München", "Elisenhof"));
+		Worker w1 = new Worker("Schufter", "Hannes", 198, 'm', company);
+		s1.marry(w1);
+		//System.out.println(s1.sayHello());
+		
+		//w1.work();
+		//s1.study();
+		PersonUtility.personSayHello(p1);
+		PersonUtility.personSayHello(s1);
+		PersonUtility.personSayHello(w1);
+		PersonUtility.personSayHello(new Artist("Beuss", "Josef", 189, 'm'));
+	}
+	
+	
 }
