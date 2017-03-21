@@ -8,6 +8,23 @@ public class Person {
 	private Character gender;
 	private Person partner;
 	private Address address;
+	private static final Integer NUMBER_OF_EYES; //NUMBER_OF_EYES
+	private static int peopleCounter;
+	public static Integer getNumberOfEyes() {
+		return NUMBER_OF_EYES;
+	}
+	//Statische Initializer/Konstruktor
+	static{
+		System.out.println("Initializing class Person");
+		NUMBER_OF_EYES = 2;
+	}
+	//Default-Konstruktor, wird (zusätzlich zu einem anderen Konstruktor IMMER aufgerufen
+	{
+		peopleCounter = peopleCounter + 1;
+		System.out.println("Actual personCounter: " + peopleCounter);
+		System.out.println("Initializing object of type Person " + this);
+	}
+
 	
 	public Address getAddress() {
 		return address;

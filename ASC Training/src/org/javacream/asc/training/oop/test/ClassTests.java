@@ -103,7 +103,7 @@ public class ClassTests {
 		Assert.assertEquals(2,company.getAddresses().size());
 		doSomethingHidden(company);
 		Assert.assertEquals(2,company.getAddresses().size());
-		
+		System.out.println(Person.getNumberOfEyes());
 	}
 	private void doSomethingHidden(Company company) {
 		company.getAddresses().clear();
