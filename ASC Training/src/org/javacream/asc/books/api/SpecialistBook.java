@@ -1,4 +1,4 @@
-package org.javacream.asc.books;
+package org.javacream.asc.books.api;
 
 public class SpecialistBook extends Book {
 

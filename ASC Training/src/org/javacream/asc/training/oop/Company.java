@@ -1,11 +1,14 @@
 package org.javacream.asc.training.oop;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 
 public class Company {
 
 	private String name;
-	private ArrayList<Address> addresses;
+	private List<Address> addresses;
 	public Company(String name, Address address) {
 		super();
 		this.name = name;
@@ -26,9 +29,11 @@ public class Company {
 		}
 	}
 	
-	public ArrayList<Address> getAddresses(){
-		return new ArrayList<>(this.addresses);
+	public List<Address> getAddresses(){
+		return Collections.unmodifiableList(this.addresses);
+		//return this.addresses;
 	}
+	
 
 //	public void setAddresses(ArrayList<Address> addresses) {
 //		this.addresses = new ArrayList<>(addresses);

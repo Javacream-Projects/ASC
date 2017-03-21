@@ -1,16 +1,19 @@
 package org.javacream.asc.books.test;
 
-import org.javacream.asc.books.Book;
-import org.javacream.asc.books.BooksService;
-import org.javacream.asc.books.SchoolBook;
-import org.javacream.asc.books.SpecialistBook;
+import org.javacream.asc.books.api.Book;
+import org.javacream.asc.books.api.BooksService;
+import org.javacream.asc.books.api.IsbnGenerator;
+import org.javacream.asc.books.api.SchoolBook;
+import org.javacream.asc.books.api.SequenceIsbnGenerator;
+import org.javacream.asc.books.api.SpecialistBook;
+import org.javacream.asc.books.impl.MapBooksService;
 import org.junit.Test;
 
 public class BooksServiceTest {
 
 	@Test
 	public void testBooksApplication() {
-		BooksService booksService = new BooksService();
+		BooksService booksService = new MapBooksService();
 		Book book = new Book("ISBN1", "TITLE1", 19.99, 200);
 		booksService.newBook(book);
 		book = new Book("ISBN2", "TITLE2", 9.99, 100);
@@ -34,6 +37,9 @@ public class BooksServiceTest {
 		
 		booksService.update("ISBN2", 309.87, 3);
 		System.out.println(booksService.findBookByIsbn("ISBN2").info());
+		
+		IsbnGenerator isbnGenerator = new SequenceIsbnGenerator();
+		specialistBook = new SpecialistBook(isbnGenerator.nextIsbn(), "TITLE7", 99.99, 2000, "Math");
 		
 
 	}

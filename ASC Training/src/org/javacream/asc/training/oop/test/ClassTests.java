@@ -87,7 +87,7 @@ public class ClassTests {
 		p3.setAddress(a2);
 		p2.setAddress(new Address("Düsseldorf", "Flughafen"));
 	}
-	//@Test 
+	@Test 
 	public void companyAndAddresses(){
 		
 		Address a1 = new Address("München", "Marienplatz");
@@ -107,15 +107,17 @@ public class ClassTests {
 		Assert.assertEquals(2,company.getAddresses().size());
 		company.removeAddress(0);
 		Assert.assertEquals(2,company.getAddresses().size());
-		doSomethingHidden(company);
+		//doSomethingHidden(company);
 		Assert.assertEquals(2,company.getAddresses().size());
 		System.out.println(Person.getNumberOfEyes());
 	}
-	private void doSomethingHidden(Company company) {
+	void doSomethingHidden(Company company) {
+		System.out.println(company.getAddresses().getClass().getName());
 		company.getAddresses().clear();
 	}
 	
-	@Test public void testPersonClassHierarchie(){
+	//@Test 
+	public void testPersonClassHierarchie(){
 		Person p1 = new Person("Sawitzki", "Klaus", 181, 'm');
 		Student s1 = new Student("Einstein", "Alberta", 167, 'f', "LMU");
 		Company company = new Company("Integrata", new Address("München", "Elisenhof"));

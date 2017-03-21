@@ -1,9 +1,10 @@
 package org.javacream.asc.training.oop.music;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Band {
-	ArrayList<SoundProvider> soundProviders;
+	private List<SoundProvider> soundProviders;
 	{
 		soundProviders = new ArrayList<>();
 	}
