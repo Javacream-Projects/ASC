@@ -1,11 +1,14 @@
 package org.javacream.asc.books.api;
 
+import java.util.List;
+
 public class Book {
 
 	private String isbn;
 	private String title;
 	private Double price;
 	private Integer pages;
+	private List<Author> authors;
 	public Double getPrice() {
 		return price;
 	}
