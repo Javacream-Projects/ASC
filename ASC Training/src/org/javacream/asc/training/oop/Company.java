@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Company {
+public class Company implements Addressable{
 
 	private String name;
 	private List<Address> addresses;
@@ -41,5 +41,15 @@ public class Company {
 
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public Address getAddress() {
+		return addresses.get(0);
+	}
+
+	@Override
+	public String toString() {
+		return "Company [name=" + name + "]";
 	}
 }

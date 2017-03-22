@@ -5,9 +5,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.javacream.asc.training.oop.Address;
+import org.javacream.asc.training.oop.Addressable;
 
-public class Publisher {
+public class Publisher implements Addressable{
 
+	@Override
+	public String toString() {
+		return "Publisher [publisherName=" + publisherName + ", address=" + address + "]";
+	}
 	private String publisherName;
 	public Publisher(String publisherName, Address address) {
 		super();
@@ -34,6 +39,10 @@ public class Publisher {
 	
 	public void addBooks(List<Book> newBooks){
 		publishedBooks.addAll(newBooks);
+	}
+	@Override
+	public String getName() {
+		return publisherName;
 	}
 	
 }

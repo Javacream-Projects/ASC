@@ -1,6 +1,6 @@
 package org.javacream.asc.training.oop;
 
-public class Person {
+public class Person implements Addressable {
 
 	private String lastname;
 	private String givenName;
@@ -26,6 +26,10 @@ public class Person {
 	}
 
 	
+	/* (non-Javadoc)
+	 * @see org.javacream.asc.training.oop.Addressable#getAddress()
+	 */
+	@Override
 	public Address getAddress() {
 		return address;
 	}
@@ -102,5 +106,10 @@ public class Person {
 
 	public Character getGender() {
 		return gender;
+	}
+
+	@Override
+	public String getName() {
+		return givenName + " " + lastname;
 	}
 }

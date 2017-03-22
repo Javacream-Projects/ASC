@@ -8,15 +8,15 @@ import java.util.Map;
 public class AddressBook {
 
 
-	private Map<Address, List<Person>> addressMap;
+	private Map<Address, List<Addressable>> addressMap;
 	
 	{
 		addressMap = new HashMap<>();
 	}
 	
-	public void add(Person p){
+	public void add(Addressable p){
 		Address a = p.getAddress();
-		List<Person> atAddress = addressMap.get(a);
+		List<Addressable> atAddress = addressMap.get(a);
 		if (atAddress == null){
 			atAddress = new ArrayList<>();
 			addressMap.put(a, atAddress);
@@ -24,7 +24,7 @@ public class AddressBook {
 		atAddress.add(p);
 	}
 	
-	public List<Person> findByAddress(Address address){
+	public List<Addressable> findByAddress(Address address){
 		return addressMap.get(address);
 	}
 }
