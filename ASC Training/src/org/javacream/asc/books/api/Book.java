@@ -1,8 +1,18 @@
 package org.javacream.asc.books.api;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Book implements Comparable<Book>{
+
+	@Override
+	public String toString() {
+		return "Book [isbn=" + isbn + ", title=" + title + ", price=" + price + ", pages=" + pages + ", authors="
+				+ authors + ", keywords=" + keywords + "]";
+	}
 
 	private String isbn;
 	private String title;
@@ -66,4 +76,14 @@ public class Book implements Comparable<Book>{
 		return this.title.compareTo(o.title);
 //		return this.pages- o.pages;
 	}
+
+	private Set<String> keywords = new HashSet<>();
+	
+	public Set<String> getKeywords() {
+		return Collections.unmodifiableSet(keywords);
+	}
+	public void addKeywords(String...keywords ){
+		this.keywords.addAll(Arrays.asList(keywords));
+	}
+	
 }
