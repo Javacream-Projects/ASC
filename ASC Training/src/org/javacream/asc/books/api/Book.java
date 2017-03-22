@@ -2,7 +2,7 @@ package org.javacream.asc.books.api;
 
 import java.util.List;
 
-public class Book {
+public class Book implements Comparable<Book>{
 
 	private String isbn;
 	private String title;
@@ -60,5 +60,10 @@ public class Book {
 		this.title = title;
 		this.price = price;
 		this.pages = pages;
+	}
+	@Override
+	public int compareTo(Book o) {
+		return this.title.compareTo(o.title);
+//		return this.pages- o.pages;
 	}
 }
