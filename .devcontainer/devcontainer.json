@@ -1,0 +1,23 @@
+{
+  "name": "Angular Nx Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",
+        "nrwl.angular-console",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "containerEnv": {
+    "CHOKIDAR_USEPOLLING": "true"
+  },
+  "forwardPorts": [4200],
+  "remoteUser": "node",
+  "postStartCommand": "npm add --global nx"
+}
